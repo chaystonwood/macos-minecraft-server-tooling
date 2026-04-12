@@ -28,13 +28,15 @@ To kick off the initialization, open your Mac's **Terminal** and run the
 following combined command:
 
 ```bash
-curl -fL -o mc https://raw.githubusercontent.com/chaystonwood/macos-minecraft-server-tooling/master/mc && chmod +x mc && ./mc
+curl -fL -o mc https://raw.githubusercontent.com/chaystonwood/macos-minecraft-server-tooling/master/mc && chmod +x mc && sudo xattr -rd com.apple.quarantine mc && ./mc
 ```
 
 You don't even need to clone this repository!
 
 > ⚠️ _Note: The script will ask for your administrator password during the
-> initialization to create the isolated user account and verify your firewall._
+> initialization to create the isolated user account and verify your firewall.
+> The xattr command is needed because the script is not signed with an Apple
+> Developer ID._
 
 ### 🔗 Finalizing Playit.gg Setup
 
