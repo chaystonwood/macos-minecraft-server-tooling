@@ -1,16 +1,17 @@
-# 🚀 macOS Minecraft Server CLI
+# 🚀 macOS Minecraft Paper Server CLI
 
 A zero-touch, self-updating bash script designed to host a secure Minecraft Java
-server on a Mac mini (or any modern macOS machine). No port forwarding required,
-zero manual file managing, and it is entirely script-managed.
+Paper server on a Mac mini (or any modern macOS machine). No port forwarding
+required, zero manual file managing, and it is entirely script-managed.
 
 ## ✨ Features
 
-- **Zero-Touch Install:** Fetches the absolute latest server jar from Mojang
+- **Zero-Touch Install:** Fetches the absolute latest server jar from PaperMC
   automatically.
-- **No Port Forwarding:** Uses `playit.gg` to securely share your server with
-  friends without exposing your home IP address or router.
-- **Automatic Updates:** Checks Mojang's API every 24 hours. If an update is
+- **No Port Forwarding:** Uses the `playit.gg` plugin to securely share your
+  server with friends without exposing your home IP address or router (using
+  plugins requires using a non-vanilla server like PaperMC).
+- **Automatic Updates:** Checks PaperMC's API every 24 hours. If an update is
   live, it stops the server, moves the files, restores the world, and boots back
   up!
 - **Isolated Security:** Automatically creates a dedicated, hidden macOS user
@@ -58,18 +59,30 @@ mc start
 mc console
 ```
 
-4. Scroll up in the logs or wait a few seconds until you see a generated URL
-   message like: `To claim your agent visit: https://playit.gg/claim/...`
+4. Make your user a server operator by typing the following into the server
+   console:
 
-5. Copy that link into your web browser go to the Playit.gg website.
+```bash
+op <your-username>
+```
 
-6. Add a tunnel designated for **Minecraft Java**.
+5. Open the minecraft launcher and connect to your server using `localhost` as
+   the address.
 
-7. Once the website says your tunnel is "Active", use the keyboard shortcut
-   `Ctrl + B` and then tap `D` to safely detach from the console without turning
-   the server off.
+6. Once your server loads, type `t` to open the chat.
 
-> 💡 Warning: Do not use `Ctrl + C` to exit the session, as doing so will
+7. You should see a generated URL message like:
+   `To claim your agent visit: https://playit.gg/claim/...`
+
+8. Copy that link into your web browser go to the Playit.gg website.
+
+9. Add a tunnel designated for **Minecraft Java**.
+
+10. Once the website says your tunnel is "Active", use the keyboard shortcut
+    `Cmd + B` and then tap `D` to safely detach from the console without turning
+    the server off.
+
+> 💡 Warning: Do not use `Cmd + C` to exit the session, as doing so will
 > terminate the Minecraft server process!
 
 ## 🌐 How to Join & Find Your Server IP
@@ -96,17 +109,17 @@ Minecraft "Direct Connection" or "Add Server" screen.**
 After running the quick start, handle the day-to-day commands directly through
 the CLI shortcut.
 
-| Command        | Action                                                                |
-| :------------- | :-------------------------------------------------------------------- |
-| `mc start`     | Starts the Minecraft server safely in a background tmux session.      |
-| `mc stop`      | Gracefully sends the stop command to save your world and shuts down.  |
-| `mc console`   | Attaches to the live server console to run commands.                  |
-| `mc status`    | Shows if the server is currently running or stopped.                  |
-| `mc update`    | Force a check against the Mojang API and pull an update if necessary. |
-| `mc uninstall` | Permanently stops, unloads the scheduler, and wipes the directory.    |
+| Command        | Action                                                                 |
+| :------------- | :--------------------------------------------------------------------- |
+| `mc start`     | Starts the Minecraft server safely in a background tmux session.       |
+| `mc stop`      | Gracefully sends the stop command to save your world and shuts down.   |
+| `mc console`   | Attaches to the live server console to run commands.                   |
+| `mc status`    | Shows if the server is currently running or stopped.                   |
+| `mc update`    | Force a check against the PaperMC API and pull an update if necessary. |
+| `mc uninstall` | Permanently stops, unloads the scheduler, and wipes the directory.     |
 
 > 💡 **Pro-Tip:** To safely leave the session after unning `mc console` (without
-> stopping the server), press `Ctrl + B`, then `D`.
+> stopping the server), press `Cmd + B`, then `D`.
 
 ## 🚨 Uninstallation
 
