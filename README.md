@@ -140,3 +140,6 @@ mc uninstall
 > your entire application directory (including active worlds, plugins, and
 > update archives) into a dated ZIP file on your Mac's Desktop before deleting
 > the local environment!_
+
+In order to fully clean up your minecraft server, you will need to _manually_
+delete your agent and tunnel from the Playit site.
