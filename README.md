@@ -79,6 +79,13 @@ mc console
 > 💡 Warning: Do not use `Cmd + C` to exit the session, as doing so will
 > terminate the Minecraft server process!
 
+### The launcher claims the server is outdated
+
+This script only downloads the latest _stable_ version of PaperMC, which may not
+match the latest version of your launcher. To fix this, you'll need to add a
+specific installation of the Minecraft Client to your launcher. You can watch
+[this video](https://www.youtube.com/watch?v=L5cIOHfXsa0) to see how.
+
 ## 🌐 How to Join & Find Your Server IP
 
 Because this script uses Playit.gg, your home IP address remains completely
