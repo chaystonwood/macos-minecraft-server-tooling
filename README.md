@@ -105,14 +105,15 @@ Minecraft "Direct Connection" or "Add Server" screen.**
 After running the quick start, handle the day-to-day commands directly through
 the CLI shortcut.
 
-| Command        | Action                                                                 |
-| :------------- | :--------------------------------------------------------------------- |
-| `mc start`     | Starts the Minecraft server safely in a background tmux session.       |
-| `mc stop`      | Gracefully sends the stop command to save your world and shuts down.   |
-| `mc console`   | Attaches to the live server console to run commands.                   |
-| `mc status`    | Shows if the server is currently running or stopped.                   |
-| `mc update`    | Force a check against the PaperMC API and pull an update if necessary. |
-| `mc uninstall` | Permanently stops, unloads the scheduler, and wipes the directory.     |
+| Command         | Action                                                                 |
+| :-------------- | :--------------------------------------------------------------------- |
+| `mc start`      | Starts the Minecraft server safely in a background tmux session.       |
+| `mc stop`       | Gracefully sends the stop command to save your world and shuts down.   |
+| `mc console`    | Attaches to the live server console to run commands.                   |
+| `mc status`     | Shows if the server is currently running or stopped.                   |
+| `mc update`     | Force a check against the PaperMC API and pull an update if necessary. |
+| `mc cli-update` | Updates this CLI tool to the latest version.                           |
+| `mc uninstall`  | Permanently stops, unloads the scheduler, and wipes the directory.     |
 
 > 💡 **Pro-Tip:** To safely leave the session after running `mc console`
 > (without stopping the server), press `Cmd + B`, then `D`.
