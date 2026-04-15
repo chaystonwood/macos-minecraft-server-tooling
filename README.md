@@ -8,9 +8,8 @@ required, zero manual file managing, and it is entirely script-managed.
 
 - **Zero-Touch Install:** Fetches the absolute latest server jar from PaperMC
   automatically.
-- **No Port Forwarding:** Uses the `playit.gg` plugin to securely share your
-  server with friends without exposing your home IP address or router (using
-  plugins requires using a non-vanilla server like PaperMC).
+- **No Port Forwarding:** Uses `playit.gg` to securely share your server with
+  friends without exposing your home IP address or router.
 - **Automatic Updates:** Checks PaperMC's API every 24 hours. If an update is
   live, it stops the server, moves the files, restores the world, and boots back
   up!
@@ -41,8 +40,21 @@ You don't even need to clone this repository!
 
 ### 🔗 Finalizing FREE Playit.gg Setup
 
-Because the Playit agent runs as a plugin directly inside your Minecraft server,
-it will generate an authentication link the very first time you boot the server.
+During installation, you have the option of using Playit as a plugin within your
+server, or of using Playit as a local service, or not using Playit at all.
+
+Playit.gg is a free tunneling service that can create a public URL for your
+server, allowing friends to connect without complex router setup. The plugin
+runs inside your Minecraft server and automatically manages tunnels, and the
+local standalone agent allows you to run Playit separately to create tunnels for
+any local service. The Playit plugin is generally easier to set up for Minecraft
+servers, while the standalone agent offers more flexibility if you want to
+tunnel for both Minecraft Java and Bedrock editions for the same server instance
+(leveraging the GeyserMC plugin, which is not automatically installed in this
+CLI).
+
+Regardless of which Playit option you choose, you will need to follow these
+steps to get your first tunnel set up for your server.
 
 1. **Restart your terminal** (or open a new window) so the `mc` shortcut
    activates.
@@ -58,6 +70,9 @@ mc start
 ```bash
 mc console
 ```
+
+If you chose the standalone agent version (NOT the plugin), you will need to
+type `Cmd + B` and then `N` to navigate to the tmux window dedicated for Playit.
 
 4. After the server finishes initializing, one of the very last messages should
    be from Playit. You should see a generated URL message like:
@@ -112,18 +127,20 @@ Minecraft "Direct Connection" or "Add Server" screen.**
 After running the quick start, handle the day-to-day commands directly through
 the CLI shortcut.
 
-| Command         | Action                                                                 |
-| :-------------- | :--------------------------------------------------------------------- |
-| `mc start`      | Starts the Minecraft server safely in a background tmux session.       |
-| `mc stop`       | Gracefully sends the stop command to save your world and shuts down.   |
-| `mc console`    | Attaches to the live server console to run commands.                   |
-| `mc status`     | Shows if the server is currently running or stopped.                   |
-| `mc update`     | Force a check against the PaperMC API and pull an update if necessary. |
-| `mc cli-update` | Updates this CLI tool to the latest version.                           |
-| `mc uninstall`  | Permanently stops, unloads the scheduler, and wipes the directory.     |
+| Command         | Action                                                                                    |
+| :-------------- | :---------------------------------------------------------------------------------------- |
+| `mc start`      | Starts the Minecraft server safely in a background tmux session.                          |
+| `mc stop`       | Gracefully sends the stop command to save your world and shuts down.                      |
+| `mc console`    | Attaches to the live server console to run commands.                                      |
+| `mc status`     | Shows if the server is currently running or stopped.                                      |
+| `mc update`     | Force a check against the PaperMC API and pull an update if necessary.                    |
+| `mc cli-update` | Updates this CLI tool to the latest version.                                              |
+| `set-secret`    | Saves your Playit.gg secret for automatic tunnel management (only for non-plugin Playit). |
+| `mc uninstall`  | Permanently stops, unloads the scheduler, and wipes the directory.                        |
 
 > 💡 **Pro-Tip:** To safely leave the session after running `mc console`
-> (without stopping the server), press `Cmd + B`, then `D`.
+> (without stopping the server), press `Cmd + B`, then `D`. To switch tmux
+> windows if using the non-plugin Playit, press `Cmd + B`, then `N`.
 
 ## 🚨 Uninstallation
 
